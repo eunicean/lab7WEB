@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>🍪 CRK Blog</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+
+        // LIGHTGREEN1 = "#ccd5ae"
+        // LIGHTGREEN2 = "#e9edc9"
+        // LIGHYELLOW = "#fefae0"
+        // BEISH = "#faedcd"
+        // LIGHBROWN = "#d4a373"
+
+        const bodyCSS = `
+            body {
+                margin: 0;
+                background-color: #ccd5ae;
+                font-family: "Helvetica";
+            }
+
+        `;
+
+        const headerCSS = `
+            .headerContainer {
+                height: 60px;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                position: fixed;
+                background-color: #d4a373;
+                z-index: 100;
+            }
+
+            .headerContainer h2{
+                margin: 5% 20px 5%;
+            }
+        `;
+
+        const listOfContentsCSS = `
+            .listContents {
+                width = 80%;
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                position: fixed;
+                background-color: #fefae0;
+            }
+        `;
+
+        let bodyStyle = document.createElement('style')
+        let headerStyle = document.createElement('style')
+        let listContentsStyle = document.createElement('style')
+
+        bodyStyle.textContent = bodyCSS
+        headerStyle.textContent = headerCSS
+        listContentsStyle.textContent = listOfContentsCSS
+
+        document.head.appendChild(bodyStyle)
+        document.head.appendChild(headerStyle)
+        document.head.appendChild(listContentsStyle)
+
+        function Header(){
+            return <div className="headerContainer">
+                    <h2>Cookie Run Kingdom Blog 🍪</h2>                     
+                </div>
+        }
+        
+        function ListOfContents (){
+            return <div className = "listContents">
+                    <h2>Hello</h2>
+                </div>
+        }
+
+        function App() {
+            return (
+                <div>
+                    <Header />
+                    <ListOfContents />
+                </div>
+            )
+        }
+        
+        ReactDOM.render(<App />, document.getElementById('root'))
+    </script>
+</body>
+</html>
